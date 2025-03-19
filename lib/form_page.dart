@@ -10,6 +10,15 @@ class FormPage extends StatefulWidget {
 class _FormPageState extends State<FormPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Form Page',
+          style: TextStyle(
+            fontSize: 25,
+          ),
+        ),
+        centerTitle: true,
+        ),
+    );
   }
 }
