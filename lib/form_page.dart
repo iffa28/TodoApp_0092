@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:intl/intl.dart';
 class FormPage extends StatefulWidget {
   const FormPage({super.key});
 
@@ -35,6 +37,26 @@ class _FormPageState extends State<FormPage> {
 
   Future<void> chooseDateTime(BuildContext context) async {
     DateTime tempPickedDate = DateTime.now();
+
+    final pickedDateTime = await showCupertinoModalPopup<DateTime>(
+      context: context,
+      builder: (_) {
+        return Material(
+          child: Container(
+            height: MediaQuery.of(context).size.height * 0.4,
+            color: Colors.white,
+            child: Column(
+              children: [
+                
+              ]
+            )
+
+          )
+        )
+
+      },
+    )
+
   }
 
   @override
