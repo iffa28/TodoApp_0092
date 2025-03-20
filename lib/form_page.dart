@@ -33,12 +33,18 @@ class _FormPageState extends State<FormPage> {
     }
   }
 
+  Future<void> chooseDateTime(BuildContext context) async {
+
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Form Page', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+        title: Text(
+          'Form Page',
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
       ),
       body: SafeArea(
@@ -50,7 +56,11 @@ class _FormPageState extends State<FormPage> {
             children: [
               Text(
                 'Task Date:',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, height: 1,),
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  height: 1,
+                ),
               ),
               Row(
                 children: [
@@ -61,8 +71,7 @@ class _FormPageState extends State<FormPage> {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {
-                    },
+                    onPressed: () {},
                     icon: Icon(Icons.calendar_today, color: Colors.blue),
                   ),
                 ],
@@ -117,7 +126,6 @@ class _FormPageState extends State<FormPage> {
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
-
                   ],
                 ),
               ),
