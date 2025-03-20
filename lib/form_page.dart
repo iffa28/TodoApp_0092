@@ -7,7 +7,8 @@ class FormPage extends StatefulWidget {
 }
 
 class _FormPageState extends State<FormPage> {
-  
+  final TextEditingController todoController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
