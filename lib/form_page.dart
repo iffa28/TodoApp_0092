@@ -222,6 +222,21 @@ class _FormPageState extends State<FormPage> {
                   ],
                 ),
               ),
+              SizedBox(height: 20),
+              Text(
+                'List Tasks',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 10),
+
+              Expanded(
+                child: ListView.builder(
+                  itemCount: daftarTodo.length,
+                  itemBuilder: (context, index) {
+                    
+                  },
+                ),
+              ),
             ],
           ),
         ),
