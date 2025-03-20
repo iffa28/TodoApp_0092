@@ -199,12 +199,20 @@ class _FormPageState extends State<FormPage> {
                         if (todoKey.currentState!.validate()) {
                           if (selectedDate == null) {
                             ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text('Please select a date')),
+                              SnackBar(
+                                content: Text('Please select a date'),
+                                behavior: SnackBarBehavior.floating,
+                                margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                                backgroundColor: Colors.blueGrey),
                             );
                           } else {
                             addTodo();
                             ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text('Data added Succesfully')),
+                              SnackBar(
+                                content: Text('Task added Succesfully'),
+                                behavior: SnackBarBehavior.floating,
+                                margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                              backgroundColor: Colors.teal)
                             );
                           }
                         }
