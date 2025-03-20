@@ -233,7 +233,48 @@ class _FormPageState extends State<FormPage> {
                 child: ListView.builder(
                   itemCount: daftarTodo.length,
                   itemBuilder: (context, index) {
-                    
+                    return Container(
+                      margin: EdgeInsets.only(bottom: 10),
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.lightBlue[100],
+                        borderRadius: BorderRadius.circular(9.0),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                daftarTodo[index]['task'],
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                'Deadline: ${daftarTodo[index]['deadline']}',
+                                style: TextStyle(fontSize: 15),
+                              ),
+                              SizedBox(height: 5),
+                              Text(
+                                daftarTodo[index]['isDone']
+                                    ? 'Done'
+                                    : 'Not Done',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color:
+                                      daftarTodo[index]['isDone']
+                                          ? Colors.green[800]
+                                          : Colors.red,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    );
                   },
                 ),
               ),
