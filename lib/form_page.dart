@@ -82,46 +82,50 @@ class _FormPageState extends State<FormPage> {
                     ),
 
                     child: CupertinoDatePicker(
-                        mode: CupertinoDatePickerMode.dateAndTime,
-                        initialDateTime: DateTime.now(),
-                        onDateTimeChanged: (DateTime value) {
-                          setState(() {
-                            selectedDate = DateFormat('dd-MM-yyyy HH:mm').format(value);
-                          });
-                        },
-                      ), 
+                      mode: CupertinoDatePickerMode.dateAndTime,
+                      initialDateTime: DateTime.now(),
+                      onDateTimeChanged: (DateTime value) {
+                        setState(() {
+                          selectedDate = DateFormat(
+                            'dd-MM-yyyy HH:mm',
+                          ).format(value);
+                        });
+                      },
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 16, right: 16, bottom: 33),
-                    child: SizedBox(
-                      height: 40,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blue,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                        
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 16, right: 16, bottom: 33),
+                  child: SizedBox(
+                    height: 40,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
-                        onPressed: () {
-                          Navigator.of(context).pop(tempPickedDate);
-                        },
-                        child: Text(
-                          'Select',
-                          style: TextStyle(fontSize: 18, color: Colors.white),
-                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop(tempPickedDate);
+                      },
+                      child: Text(
+                        'Select',
+                        style: TextStyle(fontSize: 18, color: Colors.white),
                       ),
                     ),
                   ),
-
-
+                ),
               ],
             ),
           ),
         );
       },
     );
+    if (pickedDateTime != null) {
+      setState(() {
+        selectedDate = DateFormat('dd-MM-yyyy HH:mm').format(pickedDateTime);
+      });
+    }
   }
 
   @override
