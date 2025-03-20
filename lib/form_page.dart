@@ -92,6 +92,29 @@ class _FormPageState extends State<FormPage> {
                       ), 
                     ),
                   ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 16, right: 16, bottom: 33),
+                    child: SizedBox(
+                      height: 40,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                        
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).pop(tempPickedDate);
+                        },
+                        child: Text(
+                          'Select',
+                          style: TextStyle(fontSize: 18, color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ),
+
 
               ],
             ),
