@@ -70,6 +70,29 @@ class _FormPageState extends State<FormPage> {
                     ],
                   ),
                 ),
+
+                Divider(height: 1),
+
+                Expanded(
+                  child: CupertinoTheme(
+                    data: CupertinoThemeData(
+                      textTheme: CupertinoTextThemeData(
+                        dateTimePickerTextStyle: TextStyle(fontSize: 18),
+                      ),
+                    ),
+
+                    child: CupertinoDatePicker(
+                        mode: CupertinoDatePickerMode.dateAndTime,
+                        initialDateTime: DateTime.now(),
+                        onDateTimeChanged: (DateTime value) {
+                          setState(() {
+                            selectedDate = DateFormat('dd-MM-yyyy HH:mm').format(value);
+                          });
+                        },
+                      ), 
+                    ),
+                  ),
+
               ],
             ),
           ),
