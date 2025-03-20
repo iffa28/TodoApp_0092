@@ -90,6 +90,34 @@ class _FormPageState extends State<FormPage> {
                         ),
                       ),
                     ),
+
+                    SizedBox(width: 12),
+                    TextButton(
+                      onPressed: () {
+                        if (todoKey.currentState!.validate()) {
+                          if (selectedDate == null) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text('Please select a date')),
+                            );
+                          } else {
+                            addTodo();
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text('Data added Succesfully')),
+                            );
+                          }
+                        }
+                      },
+
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Theme.of(context).primaryColor,
+                        padding: EdgeInsets.only(left: 20, right: 20),
+                      ),
+                      child: Text(
+                        'Submit',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+
                   ],
                 ),
               ),
