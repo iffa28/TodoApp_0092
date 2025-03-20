@@ -272,6 +272,15 @@ class _FormPageState extends State<FormPage> {
                               ),
                             ],
                           ),
+                          Checkbox(
+                            value: daftarTodo[index]['isDone'],
+                            onChanged: (value) {
+                              setState(() {
+                                daftarTodo[index]['isDone'] =
+                                    value; // Memperbarui status isDone
+                              });
+                            },
+                          ),
                         ],
                       ),
                     );
