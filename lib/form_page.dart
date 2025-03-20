@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class FormPage extends StatefulWidget {
   const FormPage({super.key});
 
@@ -8,17 +7,23 @@ class FormPage extends StatefulWidget {
 }
 
 class _FormPageState extends State<FormPage> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Form Page',
-          style: TextStyle(
-            fontSize: 25,
+        title: Text('Form Page', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+        centerTitle: true,
+      ),
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.only(left: 20, right: 20, top: 20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
           ),
         ),
-        centerTitle: true,
-        ),
+      ),
     );
   }
 }
