@@ -162,7 +162,9 @@ class _FormPageState extends State<FormPage> {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      chooseDateTime(context);
+                    },
                     icon: Icon(Icons.calendar_today, color: Colors.blue),
                   ),
                 ],
