@@ -47,6 +47,27 @@ class _FormPageState extends State<FormPage> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Task Date:',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, height: 1,),
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: SelectableText(
+                      selectedDate ?? 'Select a date',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                    },
+                    icon: Icon(Icons.calendar_today, color: Colors.blue),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),
