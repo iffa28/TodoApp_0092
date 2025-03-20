@@ -67,6 +67,32 @@ class _FormPageState extends State<FormPage> {
                   ),
                 ],
               ),
+
+              SizedBox(height: 5),
+              Form(
+                key: todoKey,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        controller: todoController,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter some text';
+                          }
+                          return null;
+                        },
+                        autovalidateMode: AutovalidateMode.onUnfocus,
+                        decoration: InputDecoration(
+                          labelText: 'Task Name',
+                          hintText: 'Enter task name',
+                          border: OutlineInputBorder(),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
